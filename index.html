@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond Collection</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ---- HERO SECTION ---- */
+    .main {
+      background-image: url('diamond4.jpg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      width: 100%;
+      height: 750px;
+      position: relative;
+    }
+
+    .main::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.45);
+      z-index: 0;
+    }
+
+    .head1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .head1 img {
+      width: 75px;
+      height: 50px;
+    }
+
+    .head1 ul {
+      list-style-type: none;
+    }
+
+    .head1 ul li {
+      float: left;
+    }
+
+    .head1 ul li a {
+      display: block;
+      color: #fff;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    .head1 ul li a:hover {
+      color: gold;
+      text-decoration: underline;
+    }
+
+    .btn1 {
+      background-color: gold;
+      border: none;
+      color: black;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 12px;
+      transition: 0.3s;
+    }
+
+    .btn1:hover {
+      background-color: #f4c430;
+      transform: scale(1.05);
+    }
+
+    /* ---- HERO TEXT ---- */
+    .content {
+      position: relative;
+      text-align: center;
+      top: 30%;
+      z-index: 1;
+    }
+
+    .content h1 {
+      font-size: 70px;
+      margin-bottom: 15px;
+      background: linear-gradient(45deg, #FFD700, #FFF5BA, #FFB700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 20px rgba(255, 215, 0, 0.6);
+    }
+
+    .content h4 {
+      color: #ffffff;
+      font-size: 36px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+      margin-bottom: 15px;
+    }
+
+    .content p {
+      color: #f2f2f2;
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 1.5;
+      text-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .btnsection {
+      padding-top: 50px;
+    }
+
+    .btnsection a {
+      border: 2px solid gold;
+      color: gold;
+      padding: 14px 32px;
+      font-size: 16px;
+      border-radius: 15px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 10px;
+      transition: all 0.3s ease;
+      font-weight: 600;
+    }
+
+    .btnsection a.active {
+      background-color: gold;
+      color: black;
+    }
+
+    .btnsection a:hover {
+      background-color: gold;
+      color: black;
+      transform: scale(1.05);
+    }
+
+    /* ---- OUR COLLECTION SECTION ---- */
+    .main2 h1, .main2 h6 {
+      text-align: center;
+    }
+
+    .main2 h1 {
+      margin-top: 65px;
+      font-size: 52px;
+      color: rgb(48, 4, 4);
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .main2 h6 {
+      margin-top: 16px;
+      font-size: 22px;
+      font-weight: lighter;
+      color: rgb(94, 51, 51);
+    }
+
+    /* ---- CARD SECTION ---- */
+    .main3 {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 70px auto;
+      max-width: 1200px;
+    }
+
+    .card1 {
+      position: relative;
+      width:380px;
+      height: auto;
+      overflow: hidden;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+        box-shadow: 2px 3px 15px rgba(0,0,0,0.3); ;
+    }
+    .card1 h4{
+      padding-left: 25px;
+    }
+
+    .card1 img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .card1::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    
+      /* background: rgba(0,0,0,0.3); */
+      transition: 0.4s ease;
+      z-index: 1;
+    }
+
+    /* Text overlay ("GOLD") */
+    .card1 h3 {
+      border: 1px solid gold;
+      background-color: white;
+      border-radius: 14px;
+     
+      padding: 7px;
+      width: 92%;
+      position: absolute;
+      top: 38%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(78, 14, 14);
+      font-size: 26px;
+      /* font-weight: bold; */
+      letter-spacing: 1px;
+      z-index: 1;
+      transition: 0.4s ease;
+      /* text-shadow: 0 0 15px rgba(255,215,0,0.8); */
+    }
+    .card1 p{
+      
+       position: relative;
+       color: #333;
+       font-size: 16px;
+        text-align: center;
+       padding: 15px 10px;
+       margin-top: 10px;
+    }
+
+    .card1:hover img {
+      transform: scale(1.15);
+    }
+
+ 
+
+    .card1 h3:hover  {
+      color: gold;
+     
+    }
+   
+    .card-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;        
+  justify-content: center; 
+  margin-top: 10px;
+   position: relative;  
+  z-index: 2;   
+}
+
+.card-content button {
+  flex: 0 0 45%;      
+  background-color: transparent;
+  color: Gold;
+  
+  padding: 10px 0;
+  font-size: 12px;
+  font-weight: lighter;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.card-content button:hover {
+  background-color: rgb(236, 214, 218);
+  color: rgb(223, 195, 34);
+  font-size: 16px;
+ 
+}
+.btn-main{
+  padding-left: 25px;
+  padding-top: 35px;
+  padding-bottom: 20px;
+  position: relative; 
+  z-index: 2;  
+}
+
+   .btn2{
+     background-color: #04AA6D;
+  border: none;
+  width: 90%;
+  color: white;
+  padding: 18px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+   } 
+   .btn2:hover{
+    background-color: gold;
+    color: rgb(221, 11, 11);
+    font-weight: bold;
+    font-size: 18px;
+   }
+   @media (max-width: 768px) {
+  .head1 ul {
+    display: none;
+  }
+  .btn1 {
+    display: none;
+  }
+  .content h1 {
+    font-size: 40px;
+  }
+  .main3 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .card1 {
+    width: 90%;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- HERO SECTION -->
+  <div class="main">
+    <div class="head1">
+      <img src="logo.png" alt="Logo">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Collection</a></li>
+        <li><a href="#">Gift Card</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <button class="btn1">Visit Store</button>
+    </div>
+
+    <div class="content">
+      <h1>Diamond Collection</h1>
+      <h4>BRILLIANT PERFECTION</h4>
+      <p>Stunning diamond jewelry featuring carefully selected stones that capture light and hearts with their brilliance.</p>
+      <div class="btnsection">
+        <a href="#" class="active">Shop Diamonds</a>
+        <a href="#">Visit Our Store</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- COLLECTION SECTION -->
+  <div class="main2">
+    <h1>Our Collections</h1>
+    <h6>Each piece tells a story of craftsmanship, tradition, and timeless beauty that spans generations</h6>
+  </div>
+
+  <!-- IMAGE CARDS -->
+  <div class="main3">
+    <div class="card1">
+      <img src="gold1.jpg" alt="">
+      <h3>Gold Ornaments</h3>
+      <p>Traditional and contemporary gold jewelry crafted with finest artistry</p>
+ 
+        <h4>Specialties:</h4>
+             
+             <div class="card-content">
+  <button>Necklace</button>
+  <button>Bangles</button>
+  <button>Earrings</button>
+  <button>Rings</button>
+</div>
+  <div class="btn-main">
+<button class="btn2">View Collection</button>
+      </div>
+      </div>
+
+
+       <div class="card1">
+      <img src="diamond1.jpg" alt="">
+      <h3>Diamond jewelry</h3>
+      <p>Traditional and contemporary gold jewelry crafted with finest artistry</p>
+ 
+        <h4>Specialties:</h4>
+             
+             <div class="card-content">
+  <button>Engagement Rings</button>
+  <button>Pendants</button>
+  <button>Bracelets</button>
+  <button>Custom Design</button>
+</div>
+  <div class="btn-main">
+<button class="btn2">View Collection</button>
+      </div>
+      </div>
+
+       <div class="card1">
+      <img src="silver1.jpg" alt="">
+      <h3>Silver Collections</h3>
+      <p>Traditional and contemporary gold jewelry crafted with finest artistry</p>
+ 
+        <h4>Specialties:</h4>
+             
+             <div class="card-content">
+  <button>Traditional sets</button>
+  <button>Modern Design</button>
+  <button>Temple jewelry</button>
+  <button>Accessories</button>
+</div>
+  <div class="btn-main">
+<button class="btn2">View Collection</button>
+      </div>
+      </div>
+  </div>
+</body>
+</html>
